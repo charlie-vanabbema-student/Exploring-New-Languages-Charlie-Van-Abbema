@@ -124,7 +124,7 @@ public class Program
                 #endregion
             };
             string text = File.ReadAllText(@"../Hangman_Words.txt");
-            string[] wordsarray = text.Split(" ");
+            string[] wordsarray = text.Split();
             string word = wordsarray[RandomNum(0, wordsarray.Length - 1)].ToLower();
             var validCharacters = new Regex("^[a-z]$");
             int lives = 6;
