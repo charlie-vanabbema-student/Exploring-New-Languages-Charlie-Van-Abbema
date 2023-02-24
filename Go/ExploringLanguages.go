@@ -3,23 +3,24 @@ package main
 import (
 	"fmt"
 	"os"
-	// "path/filepath"
-	// "io/ioutil"
-	// "log"
-	// "math/rand"
-	// "strings"
-	// "time"
-	// "github.com/google/uuid"
+	"path/filepath"
+	"io/ioutil"
+	"log"
+	"math/rand"
+	"strings"
+	"time"
+	"github.com/google/uuid"
 )
 
 func ReadFile(filepath string) []string {
-	contents, err := os.ReadFile(filepath)
+	b, err := ioutil.ReadFile(filePath) // read words from file
 	if err != nil {
-		fmt.Println("File reading error", err)
-		return
-	} else {
-		fmt.Println(string(contents))
+		log.Fatal(err)
 	}
+
+	str := string(b) // convert content to a 'string'
+	words := strings.Split(str, "\n")
+	return words
 }
 func AverageSecretMessage() {
 	// numbersText := ReadSecretMessage().Split(" ")
