@@ -3,14 +3,22 @@ package main
 import (
 	"fmt"
 	"os"
+	// "path/filepath"
+	// "io/ioutil"
+	// "log"
+	// "math/rand"
+	// "strings"
+	// "time"
+	// "github.com/google/uuid"
 )
-func ReadSecretMessage() {
-	contents, err := os.ReadFile("../secretMessage.txt")
-    if err != nil {
-        fmt.Println("File reading error", err)
-        return
-    } else {
-    fmt.Println(string(contents))
+
+func ReadFile(filepath string) []string {
+	contents, err := os.ReadFile(filepath)
+	if err != nil {
+		fmt.Println("File reading error", err)
+		return
+	} else {
+		fmt.Println(string(contents))
 	}
 }
 func AverageSecretMessage() {
@@ -18,9 +26,7 @@ func AverageSecretMessage() {
 }
 
 func main() {
-	ReadSecretMessage()
+	ReadFile("../secretMessage.txt")
 	// AverageSecretMessage()
 
 }
-
-
