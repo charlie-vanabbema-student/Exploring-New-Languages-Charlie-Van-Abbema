@@ -6,12 +6,12 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        // Console.WriteLine(AverageSecretMessage());
-        // Console.WriteLine(DecodeSecretMessage());
-        // foreach(var v in FizzBuzz(15))
-        //     {
-        //         Console.Write(v + " ");
-        //     }
+        Console.WriteLine(AverageSecretMessage());
+        Console.WriteLine(DecodeSecretMessage());
+        foreach(var v in FizzBuzz(15))
+            {
+                Console.Write(v + " ");
+            }
 
         Hangman();
 
