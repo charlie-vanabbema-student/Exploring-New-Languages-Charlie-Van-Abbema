@@ -5,4 +5,29 @@ const secretMessage = "73 115 32 105 110 115 105 110 99 101 114 105 116 121 32 1
     + "32 99 97 110 32 109 117 108 116 105 112 108 121 32 111 117 114 32 112 101 114 "
     + "115 111 110 97 108 105 116 105 101 115 46"
 
-console.log("Hello, World");
+console.log(AverageSecretMessage());
+console.log(DecodeSecretMessage());
+
+function AverageSecretMessage() {
+    const numberstext = secretMessage.split(" ");
+    // console.log(numberstext)
+    let sum = 0;
+    for (var i = 0; i < numberstext.length; i++) {
+        sum += parseInt(numberstext[i]);
+    }
+    return sum / numberstext.length;
+}
+
+function DecodeSecretMessage() {
+    decodedSecretMessage = ""
+    const numberstext = secretMessage.split(" ");
+    for (var i = 0; i < numberstext.length; i++) {
+        decodedSecretMessage += String.fromCharCode(parseInt(numberstext[i]));
+    }
+    return decodedSecretMessage
+}
+
+function FizzBuzz(number) {
+    string[number] = arr
+    
+}

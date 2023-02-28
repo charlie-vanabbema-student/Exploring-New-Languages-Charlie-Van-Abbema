@@ -28,7 +28,6 @@ public class Program
             }
             return (float)sum / numbers.Length;
         }
-
         static string DecodeSecretMessage()
         {
             string text = File.ReadAllText(@"../secretMessage.txt");
@@ -41,7 +40,6 @@ public class Program
             }
             return secretmessage;
         }
-
         static IList<string> FizzBuzz(int n)
         {
             var list = new List<string>(n);
@@ -59,7 +57,6 @@ public class Program
             }
             return list;
         }
-
         static void Hangman()
         {
             string[] Renders =

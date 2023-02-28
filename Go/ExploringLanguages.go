@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
-
+	"math/rand"
 	// "container/list"
 
 	// "io"
@@ -12,8 +12,7 @@ import (
 	// "path/filepath"
 	// "io/ioutil"
 	// "log"
-	// "math/rand"
-	// "time"
+	"time"
 	// "github.com/google/uuid"
 )
 
@@ -26,9 +25,11 @@ func main() {
 	var str string = string(b)
 
 	// fmt.Print(str)
-	println(AverageSecretMessage(str))
-	println(DecodeSecretMessage(str))
-	println(FizzBuzz(15))
+	fmt.Println(AverageSecretMessage(str))
+	fmt.Println(DecodeSecretMessage(str))
+	fmt.Println(FizzBuzz(15))
+	fmt.Println(GetRandomWord())
+
 }
 
 func AverageSecretMessage(str string) int {
@@ -49,7 +50,6 @@ func AverageSecretMessage(str string) int {
 	}
 	return sum / len(numbers)
 }
-
 func DecodeSecretMessage(str string) string {
 	numberstext := strings.Fields(str)
 	secretmessage := ""
@@ -67,19 +67,47 @@ func DecodeSecretMessage(str string) string {
 	}
 	return secretmessage
 }
-
 func FizzBuzz(n int) []string {
-	arr := []string{}
+	arr := make([]string, n+1)
 	for i := 1; i <= n; i++ {
 		if i%3 == 0 && i%5 == 0 {
-			arr = append(arr, "FizzBuzz")
+			arr[i] = "FizzBuzz"
 		} else if i%3 == 0 {
-			arr = append(arr, "Fizz")
+			arr[i] = "Fizz"
 		} else if i%5 == 0 {
-			arr = append(arr, "Buzz")
+			arr[i] = "Buzz"
 		} else {
-			arr = append(arr, strconv.Itoa(i))
+			// strI := strconv.Itoa(i)
+			arr[i] = strconv.Itoa(i)
+			// arr = append(arr, string(rune(i)))
 		}
 	}
 	return arr
 }
+func GetRandomWord() string {
+	b, err := os.ReadFile("../Hangman_Words.txt")
+	if err != nil {
+		fmt.Print(err)
+	}
+	var str string = string(b)
+	words := strings.Fields(str)
+	rand.Seed(time.Now().UnixNano())
+	randnum := rand.Intn(len(words) + 1)
+	word := words[randnum]
+	return word
+}
+
+type Hangman struct {
+	Lives	int
+}
+
+func Hangman() {
+	Lives = 6
+word = GetRandomWord()
+while (lives != 0) {
+
+}
+}
+
+
+	
