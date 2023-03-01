@@ -7,6 +7,7 @@ const secretMessage = "73 115 32 105 110 115 105 110 99 101 114 105 116 121 32 1
 
 console.log(AverageSecretMessage());
 console.log(DecodeSecretMessage());
+console.log(FizzBuzz(15));
 
 function AverageSecretMessage() {
     const numberstext = secretMessage.split(" ");
@@ -28,6 +29,18 @@ function DecodeSecretMessage() {
 }
 
 function FizzBuzz(number) {
-    string[number] = arr
+    let arr = [];
+    for(let i = 1; i <= number; i++) {
+        if(i % 3 == 0 && i % 5 == 0) {
+            arr.push("FizzBuzz");
+        } else if(i % 3 == 0) {
+            arr.push("Fizz");
+        } else if(i % 5 == 0) {
+            arr.push("Buzz");
+        } else {
+            arr.push(String(i));
+        }
+    }
+    return arr;
     
 }

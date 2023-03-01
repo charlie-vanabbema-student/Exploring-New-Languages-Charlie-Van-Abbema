@@ -97,17 +97,37 @@ func GetRandomWord() string {
 	return word
 }
 
-type Hangman struct {
-	Lives	int
+
+
+func CorrectGuess(guess string, letters []string) bool {
+	for _, letter := range letters {
+		if guess == letter {
+			return true
+		}
+	}
+	return false
 }
+
+func PrintWord(letters []string, used map[string]bool) string {
+	word := ""
+	for _, letter := range letters {
+		if used[letter] {
+			word += letter
+		} else {
+			word +=  "_"
+		}
+	}
+	return word
+}
+
 
 func Hangman() {
-	Lives = 6
-word = GetRandomWord()
-while (lives != 0) {
+	// letters := strings.Split(word, "")
+	word = GetRandomWord();
+	PrintWord()
+	
+}
 
-}
-}
 
 
 	
